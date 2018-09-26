@@ -1,14 +1,26 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content text-center>
+  <div padding>
+    <ion-img style="width: 200px; height: 80px;" src="assets/imgs/ntt-logo.png" class="imgbg"></ion-img>
+    </div>
+
+  <ion-list padding class="form" >
+
+      <ion-item class="round">
+        <ion-input type="text" placeholder="Employee ID"></ion-input>
+      </ion-item>
+    
+      <ion-item class="round">
+          <ion-input type="password" #password placeholder="Password"></ion-input>
+      </ion-item>
+      <div class="lgbtn">
+      <button ion-button color=#6785c1; round (click)="login()" id="sizebtn">Login</button>
+      </div>
+    </ion-list>
+
+   <div class="footer">
+      <ion-img style="width: 100%; height: 100px;" src="assets/imgs/footer.png"></ion-img>
+  </div>
+
 </ion-content>
+

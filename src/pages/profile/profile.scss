@@ -1,0 +1,45 @@
+page-profile {
+    .imgbg{
+        position: relative;
+        top: 30px;
+        left: 80px;
+        background-color: transparent;
+    }
+    #btnl{
+        position: relative;
+        top: 20px;
+        left: 5px;
+    }
+    #user{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: transparent;
+        top: 50px;
+    }
+    .formcenter{
+        position: relative;
+        top: 50px;
+        left: 80px;
+    }
+    .bottombtn{
+        position: relative;
+        top: 30px;
+        right: 50px;
+        #btn1{
+            border-color: #6785c1;
+            width: 100px;
+            height: 40px;
+            border: 2px solid #6785c1 !important;
+            font-size: 15px; 
+        }
+        #btn2{
+            width: 100px;
+            height: 40px;
+        }
+    }
+    .footer{
+        position: relative !important;
+        top: 55px !important;
+    }
+}

@@ -1,0 +1,85 @@
+page-call-out {
+    .imgbg{
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        background-color: transparent;
+    }
+    #user{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: transparent;
+        top: 100px;
+    }
+    #imgavt{
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        background-color: transparent;
+    }
+    .status{
+        position: absolute;
+        top: 15px;
+        left: 25px;
+        background-color: transparent;
+        
+        #status1{
+            position: relative;
+            left: 10px;
+            bottom: 3px;
+        }
+    }
+    .btn{
+        position: absolute;
+        top: 20px;
+       
+    #btn1{
+        padding-right: 2px;
+        
+    }
+    #btn2{
+        padding-left: 2px;
+        
+    }
+        }
+    .p2{
+        position: relative;
+        top: 5em;
+        background-color: black;
+    }
+    .ico{
+        position: absolute;
+        top: 10px;
+        right: 120px;
+    }
+    .checkF{
+        position: absolute;
+        top: 19px;
+        right: 5px;
+        background-color: transparent;
+    }
+    #checkS{
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        background-color: transparent;
+    }
+    .box{
+         position: absolute;
+         right: 50px;
+         top: 10px;
+         
+    }
+    #box1{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }   
+    .show{
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        background-color: transparent;
+    }
+}

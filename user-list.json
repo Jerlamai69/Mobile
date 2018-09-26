@@ -1,0 +1,26 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Nattapong",
+      "phone": "0908970717"
+    },
+    {
+      "id":2,
+      "name":"Nuntida",
+      "phone":"089479084"
+    }
+  ],
+  "alternate":[
+    {
+      "id":1,
+      "name":"daboynut",
+      "phone":"099999999"
+    },
+    {
+      "id":2,
+      "name":"Nuntida",
+      "phone":"089479084"
+    }
+  ]
+}

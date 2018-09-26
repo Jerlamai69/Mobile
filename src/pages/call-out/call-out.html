@@ -1,0 +1,69 @@
+<ion-content text-center *ngFor="let item of items let i = index">
+<ion-list>
+    <div>
+        <ion-img style="width: 130px; height: 80px;" src="assets/imgs/ntt-logo.png" class="imgbg"></ion-img>
+    </div> 
+    <div>
+        <ion-avatar item-start id="imgavt">
+            <img style="width: 30px; height: 30;" src="assets/imgs/user.png">
+          </ion-avatar>
+    </div>
+ 
+    <ion-item class="status" no-lines>
+        <div id="status1">
+            {{item.name}}
+        </div>
+
+        <div class="btn">
+        <button ion-button clear id="btn1" (click)="logout()">Logout</button>
+            
+        <button ion-button clear id="btn2" (click)="profile()">Profile</button>
+        </div>
+    </ion-item>
+
+</ion-list>
+<!-------------------------Zone 2----------------------------------------->
+    <ion-list class="p2" *ngFor="let item of items">
+    <ion-item>
+            <ion-avatar item-start>
+        <img style="width: 30px; height: 30;" src="assets/imgs/user.png">
+
+     </ion-avatar>
+        <div>
+                <h5>{{item.name}}</h5>
+                
+                <h5>{{item.phone}}</h5>
+                </div>
+        <!-- radio -->
+          <div class="box">
+          <h6>Success</h6>
+          </div>
+          <div id="box1">
+          <h6>Fail</h6>
+          </div>
+
+          <ion-list no-lines radio-group>
+          <ion-item class="checkF">
+                <ion-radio item-end color="danger" checked="false"></ion-radio>
+          </ion-item>
+            <ion-item id="checkS">
+                    <ion-radio  item-end color="secondary" checked="true"></ion-radio>
+         </ion-item>
+         </ion-list>
+    </ion-item>
+    <a button ion-button class="ico" color="dark" clear icon-only href="0908970717">
+            <ion-icon name="md-call" is-active="false" medium></ion-icon>
+            </a>
+<!---------------------------------alternate ----------------------------------->
+            <ion-item  class="show" no-lines>
+            <button (click)="show=!show">{{show ? 'hide' : 'show'}}</button>
+            <div *ngIf='show'>
+                  <ion-item *ngIf="item.userID == 2">
+                          {{item.name}}
+                          <br>
+                          {{item.phone}}
+                             </ion-item>
+            </div>
+            </ion-item>
+            </ion-list>
+</ion-content>
