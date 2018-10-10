@@ -21,16 +21,10 @@ import { CallInPage } from '../call-in/call-in';
 export class ProfilePage {
   public items:any;
   constructor(public navCtrl: NavController, public http: HttpClient) {
-    this.loadData();
+
     
   }
-loadData(){
-  let data:Observable<any>;
-  data = this.http.get('http://localhost/API%20JSON/json.php');
-  data.subscribe(result => {
-  this.items = result;    
-  })
-}
+
 
   logout(){
     this.navCtrl.pop()

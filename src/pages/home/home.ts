@@ -1,18 +1,35 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
-
+import { UserProvider } from '../../providers/user/user';
+import { Http } from '@angular/http';
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [Http]
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
+  users: any;
+  islogged: boolean = false;
+  constructor(public navCtrl: NavController,public userProvider:UserProvider) {
 
   }
-login(){
-  this.navCtrl.push(ProfilePage);
-}
+  ionViewDidLoad() {
+    this.userProvider.getUsers()
+    .then(data => {
+      this.users = data;
+      console.log(this.users);
+     localStorage.setItem('User', JSON.stringify(data))
+    });
+  }
 
+
+  inituserlogged(data){
+    this.islogged = true;
+
+  }
+
+  login(){
+    this.navCtrl.push(HomePage)
+  }
 }

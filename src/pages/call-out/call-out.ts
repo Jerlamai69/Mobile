@@ -19,19 +19,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CallOutPage {
   
-  public items:any;
+
   constructor(public navCtrl: NavController, public http: HttpClient) {
-    this.loadData();
+
     
   }
-loadData(){
-  let data:Observable<any>;
-  data = this.http.get('http://localhost/API%20JSON/JSON.php');
-  data.subscribe(result => {
-  this.items = result;    
-  })
-}
-   
+
+
+  
   logout(){
     this.navCtrl.push(HomePage)
   }

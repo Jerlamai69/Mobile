@@ -9,8 +9,19 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UserProvider {
+  public items: any;
+  apiUrl = '../../assets/db/userinfo.json'
+  constructor(private http: HttpClient) {
+  }
 
-  constructor(public http: HttpClient) {
+  getUsers() {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
   }
 
 }

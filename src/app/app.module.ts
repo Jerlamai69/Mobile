@@ -8,9 +8,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
 import { CallOutPage } from '../pages/call-out/call-out';
-import { UserProvider } from '../providers/user/user';
 import { HttpClientModule } from '@angular/common/http';
 import { CallInPage } from '../pages/call-in/call-in';
+import { LoginPage } from '../pages/login/login';
+import { UserProvider } from '../providers/user/user';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CallInPage } from '../pages/call-in/call-in';
     HomePage,
     ProfilePage,
     CallOutPage,
-    CallInPage
+    CallInPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -31,13 +33,15 @@ import { CallInPage } from '../pages/call-in/call-in';
     HomePage,
     ProfilePage,
     CallOutPage,
-    CallInPage
+    CallInPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+
   ]
 })
 export class AppModule {}

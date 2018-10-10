@@ -1,0 +1,32 @@
+<ion-content text-center>
+  <div padding>
+      <ion-img style="width: 200px; height: 80px;" src="assets/imgs/ntt-logo.png" class="imgbg"></ion-img>
+      </div>
+
+<form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" padding>
+
+<ion-list class="form1">
+
+  <ion-item class="round">
+    <ion-label fixed>Username</ion-label>
+    <ion-input type="text" id="inputUser" class="form-control" [formControl]="userID"  placeholder="UserID"></ion-input>
+  </ion-item>
+
+  <ion-item class="round">
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="password" id="inputPassword" class="form-control" [formControl]="password" placeholder="Password"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+  <div padding class="lgbtn">
+    <button ion-button id="btn" type="submit" round>LOGIN</button>
+  </div>
+
+</form>
+
+<div class="footer">
+  <ion-img style="width: 100%; height: 100px;" src="assets/imgs/footer.png"></ion-img>
+</div>
+
+</ion-content>

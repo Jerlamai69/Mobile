@@ -1,26 +1,8 @@
 
 <ion-content text-center>
-  <div padding>
-    <ion-img style="width: 200px; height: 80px;" src="assets/imgs/ntt-logo.png" class="imgbg"></ion-img>
-    </div>
-
-  <ion-list padding class="form" >
-
-      <ion-item class="round">
-        <ion-input type="text" placeholder="Employee ID"></ion-input>
-      </ion-item>
-    
-      <ion-item class="round">
-          <ion-input type="password" #password placeholder="Password"></ion-input>
-      </ion-item>
-      <div class="lgbtn">
-      <button ion-button color=#6785c1; round (click)="login()" id="sizebtn">Login</button>
-      </div>
-    </ion-list>
-
-   <div class="footer">
-      <ion-img style="width: 100%; height: 100px;" src="assets/imgs/footer.png"></ion-img>
-  </div>
+ <li *ngFor="let item of users">
+{{item.username}}
+ </li>
 
 </ion-content>
 
