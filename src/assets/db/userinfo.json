@@ -6,7 +6,8 @@
         "phoneNumber": "+66858417427",
         "callID": "1170081",
         "alternateID": "9970081",
-        "password":"admin"
+        "password":"12345",
+        "imgpath":"assets/imgs/tick.png"
     },
     {
         "userID": "70255",

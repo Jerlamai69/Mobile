@@ -10,8 +10,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { CallOutPage } from '../pages/call-out/call-out';
 import { HttpClientModule } from '@angular/common/http';
 import { CallInPage } from '../pages/call-in/call-in';
-import { LoginPage } from '../pages/login/login';
+import { IonicStorageModule } from '@ionic/storage';
 import { UserProvider } from '../providers/user/user';
+import { LoginComponent } from '../components/login/login';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,16 @@ import { UserProvider } from '../providers/user/user';
     ProfilePage,
     CallOutPage,
     CallInPage,
-    LoginPage
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot({
+      name: 'ntt',
+         driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +39,7 @@ import { UserProvider } from '../providers/user/user';
     ProfilePage,
     CallOutPage,
     CallInPage,
-    LoginPage
+    LoginComponent
   ],
   providers: [
     StatusBar,

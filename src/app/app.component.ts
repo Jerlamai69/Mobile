@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProfilePage } from '../pages/profile/profile';
 
 
-import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
+import { CallOutPage } from '../pages/call-out/call-out';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = CallOutPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

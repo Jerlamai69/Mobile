@@ -1,4 +1,4 @@
-<ion-content text-center *ngFor="let item of items let i = index">
+<ion-content text-center>
   <ion-list>
       <div>
           <ion-img style="width: 130px; height: 80px;" src="assets/imgs/ntt-logo.png" class="imgbg"></ion-img>
@@ -11,7 +11,7 @@
    
       <ion-item class="status" no-lines>
           <div id="status1">
-              {{item.name}}
+        
           </div>
   
           <div class="btn">
@@ -23,14 +23,12 @@
   
   </ion-list>
   <!-------------------------Zone 2----------------------------------------->
-      <ion-list class="p2" *ngFor="let item of items">
+      <ion-list class="p2">
       <ion-item>
               <ion-avatar item-start>
           <img style="width: 30px; height: 30;" src="assets/imgs/user.png">
        </ion-avatar>
-                  <h5>{{item.name}}</h5>
-                  
-                  <h5>{{item.phone}}</h5>
+                
   <!-------------------------radio button--------------------------------------------->
             <div class="box">
             <h6>Success</h6>
@@ -56,10 +54,8 @@
             <ion-item  class="show" no-lines>
                     <button (click)="show=!show">{{show ? 'hide' : 'show'}}</button>
                     <div *ngIf="show">
-                          <ion-item *ngFor="let item of items">
-                                  {{item.name}}
-                                  <br>
-                                  {{item.phone}}
+                          <ion-item >
+                                
                                      </ion-item>
                     </div>
                     </ion-item>

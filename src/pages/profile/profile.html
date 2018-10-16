@@ -7,21 +7,20 @@
       <button ion-button clear id="btnl" (click)="logout()">Logout</button>
   
         <div>
-      <ion-img src="assets/imgs/user.png" id="user"></ion-img>
+      <ion-img src="assets/imgs/tick.png" id="user"></ion-img>
         </div>
 
 
-        <ion-list padding no-lines class="formcenter" *ngFor="let item of items let i = index">
-          <div *ngIf=""></div>
-          <ion-item >
-            <p>
-              {{item.name}}
-            </p>
-            <p>
-              {{item.phone}}
-            </p>
-          </ion-item>
-          
+        <ion-list padding no-lines class="formcenter" >
+       
+          <div>
+            {{userLogin?.username}}
+            <br>
+            {{userLogin?.phoneNumber}}
+            <br>
+            <ion-img src= '{{userLogin?.imgpath}'></ion-img>
+          </div>
+
           <ion-item class="bottombtn">
            
               <button ion-button color="dark" outline id="btn1" (click)="callin()">Call in</button>
@@ -36,7 +35,6 @@
             <ion-img style="width: 100%; height: 100px;" src="assets/imgs/footer.png"></ion-img>
         </div>
       
-        
 </ion-content>
 
 
