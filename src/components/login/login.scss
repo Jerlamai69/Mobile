@@ -1,9 +1,11 @@
 login {
     .form1{
-        position: relative;
-        top: 100px;
+        position: fixed !important;
+        top: 150px;
         margin-top:20px;
         background-color: transparent !important;
+        width: 200px;
+        left: 90px;
     }
     .imgbg{
         position: relative;
@@ -13,9 +15,10 @@ login {
     .lgbtn{
         position: relative;
         padding-top: 20px;
-        top: 100px;
+        top: 150px;
         #btn{
-            width: 200px;
+            width: 150px;
+            border-radius: 10px;
         }
     }
     .footer{
@@ -25,7 +28,17 @@ login {
     .round{
         border: 2px solid #6785c1 !important;
         margin:10px auto;
-        border-radius: 10px !important;
+        border-radius: 5px !important;
+        height: 40px;
+    }
+    #calltree{
+        position: absolute;
+        top: 105px;
+        right: 43px;
+    }
+    h5{
+        font-size: 15px;
+        color: red
     }
 }
 

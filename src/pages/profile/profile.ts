@@ -27,7 +27,7 @@ export class ProfilePage {
   
   constructor(public navCtrl: NavController, public storage: Storage,public navParams: NavParams,
     public userProvider: UserProvider,) {
- this.CurrentUser();
+    this.CurrentUser();
   }
 
 
@@ -42,22 +42,19 @@ export class ProfilePage {
   }
   private userLogin: any;
   ppp(){
-    console.log('this.users : ',this.users);
+    // console.log('this.users : ',this.users);
     this.token = JSON.parse(this.Credentials);
-    console.log('this.token : ',this.token);
     this.storage.set('userID', this.token).then((val) => {
-      console.log(val);
     if(this.users) {
       (this.users).forEach(element => {
         if (val.userID === element.userID) {
-          console.log(element);
+          // console.log(element);
           this.userLogin = element;
         } else {
-          console.log("test")
+          // console.log("test")
         }
       });
     }
-    
     })
   }
 

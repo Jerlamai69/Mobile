@@ -1,60 +1,98 @@
 <ion-content text-center>
-<ion-list>
-    <div>
-        <ion-img style="width: 130px; height: 80px;" src="assets/imgs/ntt-logo.png" class="imgbg"></ion-img>
-    </div> 
-    <div>
-        <ion-avatar item-start id="imgavt">
-            <img style="width: 30px; height: 30;" src="assets/imgs/user.png">
-          </ion-avatar>
-    </div>
- 
-    <ion-item class="status" no-lines>
-        <div id="status1">
-            {{userLogin?.username}}
-        </div>
-
-        <div class="btn">
-        <button ion-button clear id="btn1" (click)="logout()">Logout</button>
+        <ion-list class="ptop">
+            <div>
+                <ion-img style="width: 130px; height: 80px;" src="assets/imgs/ntt-logo.png" class="imgbg"></ion-img>
+            </div> 
+            <div padding>
+                <ion-avatar item-start id="imgavt" >
+                    <img style="width: 30px; height: 30;" src="{{userLogin?.imgpath}}">
+                </ion-avatar>
+            </div>
+            <ion-item class="status" no-lines>
+                <div id="status1">
+                    {{userLogin?.username}}
+                </div>
+                <div class="btn">
+                <button ion-button clear id="btn1" (click)="logout()">Logout</button>
+                <button ion-button clear id="btn2" (click)="profile()">Profile</button>
+                </div>
+            </ion-item>
             
-        <button ion-button clear id="btn2" (click)="profile()">Profile</button>
-        </div>
-    </ion-item>
-
-</ion-list>
+        </ion-list>
 <!-------------------------Zone 2----------------------------------------->
-<ion-list class="p2">
- <ion-item>
-    <ion-avatar item-start>
-        <img style="width: 30px; height: 30;" src="assets/imgs/user.png">
 
-    </ion-avatar>
-        <div>
-            {{userLogin?.username}}
-            <br>
-            {{userLogin?.phoneNumber}}
-        </div>
-        <!-- radio -->
-          <div class="box">
-          <h6>Success</h6>
-          </div>
-          <div id="box1">
-          <h6>Fail</h6>
-          </div>
+ <ion-list id="sidenav" class="p2" *ngFor="let callout of userLogin?.callout" no-lines>
+    <!-- other menu items will go here -->
+      <ion-item  no-padding id="mainmenu" >
+        
+          <ion-avatar item-start class="avtpic">
+            <img src="{{callout.img}}">
+          </ion-avatar>
 
-          <ion-list no-lines radio-group>
-          <ion-item class="checkF">
-                <ion-radio item-end color="danger" checked="false"></ion-radio>
-          </ion-item>
-            <ion-item id="checkS">
-                    <ion-radio  item-end color="secondary" checked="true"></ion-radio>
-         </ion-item>
-         </ion-list>
-    </ion-item>
-    <a button ion-button class="ico" color="dark" clear icon-only href="{{userLogin?.phoneNumber}}">
-            <ion-icon name="md-call" is-active="false" medium></ion-icon>
-            </a>
-<!---------------------------------alternate ----------------------------------->
+          <div class="dname">
+         <h3>{{callout.name}}</h3>
+         <h3>{{callout.phoneNumber}}</h3>
+         </div>
+         <button ion-button id="altbutton" (click)="menuItemHandler(callout)">alternate</button>
 
+           <div id="sphone">
+           <a id="phone" button ion-button href="{{callout.phoneNumber}}">
+              <ion-icon name="md-call"></ion-icon>
+           </a>
+         </div>
+         <!-- radio button -->
+         <ion-list radio-group id="checkbox" no-lines no-padding>
+
+            <div id="statusbox">
+               <p style="color:green;">Success</p>
+               <p style="color:red;">Failed</p>
+              </div>
+            <ion-item class="checkF">
+                  <ion-radio item-end color="danger" checked="false"></ion-radio>
+            </ion-item>
+            <ion-item class="checkS">
+                      <ion-radio  item-end color="secondary" checked="false"></ion-radio>
+            </ion-item>
             </ion-list>
-</ion-content>
+
+      </ion-item>
+      <!-- click to span -->
+      <ion-item no-padding submenu-item *ngIf="showSubmenu" id="submenu" no-lines>
+          <ion-avatar item-start class="avtpic1">
+              <img src="{{callout.altpic}}">
+            </ion-avatar>
+            <div class="altname">
+        <h3>{{callout.alternate}}</h3>
+        <h3>{{callout.altNumber}}</h3>
+        </div>
+
+        <div id="newphone" *ngIf="showSubmenu" no-padding>
+            <a id="phone" button ion-button href="{{callout.altNumber}}">
+              <ion-icon name="md-call"></ion-icon>
+           </a>
+          </div>
+          
+    <ion-list radio-group id="checkbox" no-lines no-padding>
+        <div id="statusbox1">
+           <p style="color:green;">Success</p>
+           <p style="color:red;">Failed</p>
+          </div>
+
+        <ion-item class="checkF1">
+              <ion-radio item-end color="danger" checked="false"></ion-radio>
+        </ion-item>
+        <ion-item class="checkS1">
+                  <ion-radio  item-end color="secondary" checked="false"></ion-radio>
+        </ion-item>
+        </ion-list>
+
+      </ion-item>
+    </ion-list>
+    <ion-list>
+            <ion-item  class="screenshot" text-center>
+                    <button id="screenbtn" ion-button (click)="screenShotURI()">Report</button>
+                      
+                    <img src="{{ screen }}" *ngIf="state">
+            </ion-item>
+    </ion-list>
+     </ion-content>

@@ -1,85 +1,204 @@
 page-call-in {
     .imgbg{
         position: absolute;
-        top: 20px;
+        top: 25px;
         right: 10px;
         background-color: transparent;
-    }
-    #user{
-        position: relative;
-        width: 150px;
-        height: 150px;
-        background-color: transparent;
-        top: 100px;
-    }
+}
     #imgavt{
         position: absolute;
         top: 25px;
         left: 10px;
         background-color: transparent;
-    }
+}
     .status{
         position: absolute;
         top: 15px;
         left: 25px;
-        background-color: transparent;
-        
+        background-color: transparent; 
         #status1{
             position: relative;
             left: 10px;
             bottom: 3px;
+            font-size: 14px;
         }
-    }
+}
     .btn{
         position: absolute;
-        top: 20px;
-       
+        top: 20px; 
+}
     #btn1{
-        padding-right: 2px;
-        
-    }
+        padding-right: 2px;    
+}
     #btn2{
         padding-left: 2px;
-        
-    }
-        }
-    .p2{
-        position: relative;
-        top: 5em;
-        background-color: black;
+}
+
     .ico{
         position: absolute;
         top: 10px;
-        right: 120px;
-    }
-    .checkF{
-        position: absolute;
-        top: 19px;
-        right: 5px;
-        background-color: transparent;
-    }
-    #checkS{
-        position: absolute;
-        top: 20px;
-        right: 50px;
-        background-color: transparent;
-    }
+        right: 10px;
+}
     .box{
          position: absolute;
          right: 50px;
-         top: 10px;
-         
-    }
+         top: 10px;   
+}
     #box1{
         position: absolute;
         right: 20px;
         top: 10px;
-    }   
+}   
     .show{
         position: absolute;
         left: 50px;
         top: 50px;
         background-color: transparent;
+}
+    .radio{
+    background-color: transparent;
+}
+    #un{
+     position: relative;
+     left: 10px;
+     top: 3px;
+}
+
+//---------------
+    #sidenav {
+    ion-item[submenu-item] {
+    margin-top: 10px;
+    margin-left: 15px; // maybe margin-left would work better to move the border as well
+    
+    box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 2px;
     }
-    }    
+}
+    .p2{
+    position: relative;
+    top: 5em;
+    box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 2px;
+}
+    #mainmenu{
+    background-color: transparent;
+    height: 100px;
+}
+    #phone{
+    position: relative;
+    left: 120px;
+    width: 40px;
+    height: 40px;
+    bottom: 45px;
+    font-size: 15px;
+    background-color: green;
+    border: 2px solid !important;
+    border-radius: 10px !important;
+}
+    #sphone{
+    background-color: black;
+    height: 0px;
+}
+    #subitem{
+    height: 50px;
+    margin-bottom: 5px;
+}
+    #checkbox{
+    position: absolute;
+    left: 75%;
+    top: 5px;
+    padding: 0%;
+}
+    .checkF{
+    position: relative !important;
+    height: 5px;
+    width: 35px;
+    top: 44px;
+    left: 25px;
+    margin-right: 5px;
+    background-color: transparent;
+}
+    .checkS{
+    position: relative !important;
+    height: 5px;
+    width: 35px;
+    right: 15px;
+    background-color: transparent;
+}
+    .checkF1{
+    position: fixed !important;
+    height: 5px;
+    top: 35px;
+    width: 35px;
+    right: 35px;
+    background-color: transparent;
+}
+    .checkS1{
+    position: fixed !important;
+    height: 5px;
+    top: 35px;
+    width: 35px;
+    right: 75px;
+    background-color: transparent;
+}
+    #statusbox{
+    position: fixed;
+    display: inline !important;
+    top: 17px;
+    right: 10px;
+}
+    .dname{
+    position: relative !important;
+    right: 10px;
+    margin-left: 15px;
+    
+}
+    #newphone{
+    position: relative !important;
+    top: 40px;
+    right: 12px;
+}   
+    h3{
+    font-size: 2em;
+    display: block;
+}
+    #altbutton{
+    position: relative;
+    left: 5px;
+    height: 15px;
+}
+    p{
+    display: inline;
+    }
+    .altname{
+    position: relative !important;
+    top: 20px;
+}
+.avtpic{
+    position: relative;
+    left: 10px;
+}
+.avtpic1{
+    position: relative;
+    left: 5px;
+}
+#statusbox1{
+    position: fixed;
+    top: 16px;
+    right: 20px;    
+}
+#submenu{
+    height: 80px;
+}
+.screenshot{
+    position: relative;
+    background-color: transparent;
+    padding: 10px;
+    top: 50px;
+    }
+    #screenbtn{
+        height: 30px;
+        box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+    }
 }

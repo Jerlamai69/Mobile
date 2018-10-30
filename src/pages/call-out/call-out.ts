@@ -4,29 +4,27 @@ import { HomePage } from '../home/home';
 import { ProfilePage } from '../profile/profile';
 import { LoginComponent } from '../../components/login/login';
 import { Storage } from '@ionic/storage';
-/**
- * Generated class for the CallOutPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Screenshot } from '@ionic-native/screenshot';
+
+
+
 
 @IonicPage()
 @Component({
   selector: 'page-call-out',
   templateUrl: 'call-out.html',
 })
-export class CallOutPage {
+export class CallOutPage{
   public users:any;
   public Credentials: any;
   @ViewChild(Nav) nav: Nav;
   public userID:any;
   public token:any;
-  loggedin:boolean = false;
-
-  constructor(public navCtrl: NavController, public storage: Storage) {
+  showSubmenu: boolean = false;
+  screen: any;
+  state: boolean = false;
+  constructor(public navCtrl: NavController, public storage: Storage,private screenshot: Screenshot) {
     this.CurrentUser();
-    
   }
   CurrentUser(){
     this.Credentials = localStorage.getItem('credentials')
@@ -47,8 +45,8 @@ export class CallOutPage {
     if(this.users) {
       (this.users).forEach(element => {
         if (val.userID === element.userID) {
-          console.log(element);
           this.userLogin = element;
+          console.log('userLogin ', this.userLogin)
         } else {
           console.log("test")
         }
@@ -57,14 +55,37 @@ export class CallOutPage {
     
     })
   }
-  
+  menuItemHandler(data): void {
+    console.log(data);
+    if (data.alternate) {
+      console.log(data.alternate)
+      this.showSubmenu = !this.showSubmenu
+    } else {
+      this.showSubmenu = false;
+    }
+    
+  }
+
   logout(){
-    this.navCtrl.push(HomePage)
+    localStorage.removeItem('credentials')
+    this.navCtrl.setRoot(LoginComponent)
   }
   profile(){
     this.navCtrl.push(ProfilePage)
-  } 
-
+  }
+  reset() {
+    var self = this;
+    setTimeout(function(){ 
+      self.state = false;
+    }, 1000);
+  }
+  screenShotURI() {
+    this.screenshot.URI(80).then(res => {
+      this.screen = res.URI;
+      this.state = true;
+      this.reset();
+    });
+  }
   }
 
 
